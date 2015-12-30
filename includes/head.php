@@ -1,5 +1,5 @@
 <head>
-	<title>Admin Page</title>
+	<title>DWCL Senior Registration System</title>
 	<link rel="stylesheet" type="text/css" href="css/global.css" />
 	 <link href="css/bootstrap.css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">

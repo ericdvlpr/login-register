@@ -20,7 +20,12 @@ include 'includes/overall/overall_header.php';
 					    <a href="#" class="thumbnail">
 					      <img src="..." alt="...">
 					    </a>
+					    <?php
+					    if(has_access($session_user_id,1)===true){
+					    	echo "Admin";
+					    }	
 
+					    ?>
 					    <table class="table">
 						<tr>
 							<td>Firstname</td>

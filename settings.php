@@ -22,11 +22,11 @@ include 'includes/overall/overall_header.php';
 ?>
 <div class="col-xs-12 col-md-8" id="content">
 					<div class="page-header">
-						<h3>Change Password <small>Control Panel</small></h3>
+						<h3>Update User Profile <small>Control Panel</small></h3>
 						<div id="crumb">
 						<ol class="breadcrumb">
 						  <li><a href="#">User account</a></li>
-						  <li class="active">Change password</li>
+						  <li class="active">Update User Profile</li>
 						</ol>
 						</div>
 					</div>
@@ -37,10 +37,12 @@ include 'includes/overall/overall_header.php';
 						else
 						{
 								if(empty($_POST) == false && empty($errors) == true){
+									
 										$update_data=array(
 											'first_name' => $_POST['first_name'],
 											'last_name' => $_POST['last_name'],
 											'email' => $_POST['email'],
+											'allow_email' => ($_POST['allow_email']=='on') ? 1 : 0
 											);
 										update_user($update_data);
 										header('location:settings.php?success');
@@ -68,6 +70,12 @@ include 'includes/overall/overall_header.php';
 														    <label for="inputPassword3" class="col-sm-2 control-label">Email &nbsp;&nbsp; </label>
 														    <div class="col-sm-9">
 														      <input type="email" class="form-control" name="email" value="<?php echo $user_data['email'];?>"/>
+														    </div>
+														  </div>
+														  <div class="form-group">
+														    
+														    <div class="col-sm-9">
+														      <input type="checkbox" name="allow_email" <?php if($user_data['allow_email']==1){echo 'checked="checked"';}?>> Would you like to receive an email
 														    </div>
 														  </div>
 														  <div class="form-group">

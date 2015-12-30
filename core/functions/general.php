@@ -46,7 +46,7 @@ function protect_page(){
 
 function admin_protect(){
 	global $user_data;
-	if($user_data['type']===0){
+	if(has_access($user_data['user_id'],1) == false){
 		header("Location:index.php");
 		exit();
 	}
